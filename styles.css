@@ -286,3 +286,14 @@ nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
     order: -1;
   }
 }
+
+/* Contacto: formulario primero en móvil y ordenador */
+#contacto .contact-form {
+  order: -1;
+}
+
+@media (min-width: 801px) {
+  #contacto .contact-layout {
+    grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
+  }
+}
