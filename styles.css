@@ -1,0 +1,266 @@
+/* HBG MAKEUP · ESTÉTICA EDITORIAL / LUJO DISCRETO */
+:root {
+  --ivory:#f7f3ef; --rose:#e8ddd5; --dust:#d2b9ad;
+  --taupe:#94786f; --ink:#40352f; --muted:#73675f;
+  --white:#fffdfa; --line:#dfd3ca;
+  --serif:'DM Serif Display',Georgia,serif;
+  --accent:'Cormorant Garamond',Georgia,serif;
+  --body-serif:'Lora',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+}
+* {box-sizing:border-box}
+html,body {width:100%;min-height:100%;margin:0}
+html {overflow-x:hidden}
+body {overflow-x:hidden;background:var(--ivory);color:var(--ink);font:15px/1.7 var(--sans)}
+h1,h2,h3,p {margin-top:0}
+a {color:inherit;text-decoration:none}
+button,input,select,textarea {font:inherit}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {outline:2px solid var(--taupe);outline-offset:3px}
+
+/* CABECERA Y MENÚ: conservamos la navegación */
+.header {min-height:78px;padding:0 6vw;display:flex;align-items:center;justify-content:space-between;gap:20px;background:rgba(247,243,239,.97);border-bottom:1px solid #e6ddd5;position:relative;z-index:5}
+.brand {white-space:nowrap}
+.logo-header {width:152px;height:65px;object-fit:contain;display:block}
+nav {display:flex;align-items:center;gap:clamp(12px,2vw,30px)}
+nav a {font-size:12px;letter-spacing:.04em;padding:9px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
+.menu-toggle {display:none;background:none;border:0;color:var(--ink);font-size:27px;cursor:pointer}
+
+/* PANELES: estas reglas NO deben alterarse al diseñar Inicio */
+.panels {min-height:calc(100dvh - 168px);position:relative}
+.panels>.panel {display:none;width:100%;min-height:calc(100dvh - 168px)}
+.panels>.panel.active {display:grid;animation:appear .28s ease both}
+@keyframes appear {from{opacity:.5}to{opacity:1}}
+.eyebrow {font-size:10px;font-weight:600;letter-spacing:.22em;color:var(--taupe);margin-bottom:20px}
+
+/* TIPOGRAFÍAS: títulos en dos estilos, ninguno en cursiva */
+.panel h1,.panel h2 {font-family:var(--serif);font-size:clamp(38px,4vw,62px);font-weight:400;line-height:1.15;letter-spacing:-.02em;text-transform:uppercase}
+.panel h1 em,.panel h2 em {font-family:var(--accent);font-size:.92em;font-weight:500;font-style:normal;text-transform:uppercase;letter-spacing:-.015em;color:var(--taupe)}
+.hero-copy>p:not(.eyebrow),.split-copy>p:not(.eyebrow),.portfolio-copy>p:not(.eyebrow),.contact-heading>p:not(.eyebrow) {font-family:var(--body-serif);font-size:14px;font-weight:400;line-height:1.9;letter-spacing:0;color:var(--muted)}
+.split-copy>p:not(.eyebrow),.portfolio-copy>p:not(.eyebrow) {max-width:500px;margin-bottom:20px}
+
+/* PORTADA EDITORIAL: la estructura de paneles se mantiene intacta */
+.panels>#inicio.hero.active {
+  grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr);
+  align-items:center;
+  gap:0;
+  padding:0 clamp(42px,6vw,110px);
+  background:radial-gradient(ellipse at 52% 44%, #fffaf6 0%, var(--ivory) 75%);
+  overflow:hidden;
+}
+#inicio .hero-copy {
+  min-width:0; max-width:680px; padding:clamp(34px,5vh,65px) 0;
+  display:flex;flex-direction:column;align-items:flex-start;justify-content:center;
+  position:relative;z-index:1;
+}
+#inicio .eyebrow {margin-bottom:clamp(18px,3vh,30px)}
+#inicio h1 {font-size:clamp(36px,4.25vw,72px);line-height:1.12;margin:0 0 26px;max-width:100%}
+#inicio h1 em {display:block;margin-top:5px;font-size:1em;white-space:normal}
+#inicio .hero-copy>p:not(.eyebrow) {max-width:430px;margin:0;padding-top:25px}
+#inicio .hero-cta {margin-top:30px;background:#94786f;border-radius:3px;letter-spacing:.12em;padding:13px 24px}
+#inicio .hero-cta:hover {background:var(--ink)}
+#inicio .hero-art {
+  position:relative;min-width:0;min-height:0;padding:0;margin:0 -5vw 0 -7vw;
+  height:min(77dvh,720px);align-self:end;overflow:visible;
+  display:flex;align-items:flex-end;justify-content:center;
+}
+#inicio .foto-principal {
+  width:100%;height:100%;object-fit:contain;object-position:center bottom;
+  display:block;filter:drop-shadow(0 18px 22px rgba(55,42,34,.05));
+}
+/* Línea editorial en todas las secciones: entre título y texto */
+#inicio .hero-copy>p:not(.eyebrow)::before,
+.split-copy>p:not(.eyebrow):first-of-type::before,
+.portfolio-copy>p:not(.eyebrow):first-of-type::before,
+.contact-heading>p:not(.eyebrow):last-of-type::before {content:none}
+#inicio h1::after,.split-copy h2::after,.portfolio-copy h2::after,.contact-heading h2::after {
+  content:"";display:block;width:clamp(145px,26vw,280px);height:1px;background:#94786f;
+  margin-top:26px;margin-bottom:0;
+}
+.portfolio-copy h2::after,.contact-heading h2::after {margin-left:auto;margin-right:auto}
+/* Mismo tamaño de título para todas las secciones */
+.panel h1,.panel h2 {font-size:clamp(36px,4.25vw,72px)}
+/* 5. NOVIAS, INVITADAS Y SOBRE MÍ: fotos sin marcos */
+.split{grid-template-columns:.9fr 1.1fr;gap:7%;align-items:center;padding:4vh 8%}.warm{background:#ebe1da}.guest-section{background:#f1eae4}.image-placeholder{padding:0;border:0;background:transparent;overflow:hidden}.foto-novia{width:100%;object-fit:cover;object-position:center;display:block}.foto-invitada,.foto-yo{width:100%;height:520px;object-fit:cover;object-position:center;display:block}.split-copy{max-width:620px}.split-copy p:not(.eyebrow){margin-bottom:18px}
+
+/* 6. BOTONES: esquinas suaves e icono de WhatsApp */
+.button{background:var(--ink);color:white;display:inline-flex;gap:11px;align-items:center;justify-content:center;padding:13px 22px;font-size:11px;letter-spacing:.04em;transition:background .2s;border:0;border-radius:9px;text-align:center;cursor:pointer}.button:hover{background:#796052}.button-icon{width:19px;height:19px;flex-shrink:0;fill:currentColor}
+
+/* 7. MI TRABAJO: solo centramos el texto; mantenemos medidas de fotos */
+.panels>.portfolio.active{display:flex;flex-direction:column;align-items:center;text-align:center;justify-content:flex-start}.portfolio{padding:3vh 7%;background:#f0e9e3}.portfolio-copy{width:100%;max-width:800px;margin-inline:auto;text-align:center}.portfolio-copy h2{margin-bottom:14px}.portfolio-copy>p:not(.eyebrow){margin-left:auto;margin-right:auto;text-align:center}.portfolio-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;width:100%;margin:12px auto 18px;flex-shrink:0}.portfolio-grid>div{width:100%;height:450px;min-height:450px;padding:0;margin:0;border:0;background:transparent;overflow:hidden}.portfolio-grid img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border:0}.text-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;margin:0 0 15px;border-bottom:1px solid;padding-bottom:4px}.instagram-gallery-link svg{width:17px;height:17px;flex-shrink:0}
+
+/* 8. CONTACTO Y FORMULARIO (todavía sin envío al servidor) */
+.panels>.contact.active{display:block}.contact{background:#f1eae4;padding:55px max(8%,25px) 65px}.contact-heading{text-align:center;max-width:750px;margin:0 auto 36px}.contact-heading>p:last-child{color:var(--muted)}.contact-layout{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.2fr);gap:clamp(25px,5vw,80px);max-width:1150px;margin:auto}.contact-details,.contact-form{min-width:0}.contact-details h3,.contact-form h3{font:400 27px var(--serif);margin-bottom:22px}.contact-details p{display:flex;flex-direction:column;margin-bottom:18px;overflow-wrap:anywhere}.contact-details strong{font-size:12px;color:var(--taupe);font-weight:600}.contact-details a:hover{text-decoration:underline}.contact-form{background:var(--white);padding:clamp(22px,3vw,40px);border-radius:12px}.contact-form>p{color:var(--muted);font-size:13px}.form-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.contact-form label{display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:600;margin-bottom:16px}.contact-form label>span:not(.privacy-check span){color:inherit}.contact-form label>span:first-of-type{color:var(--taupe)}.contact-form input:not([type=checkbox]),.contact-form select,.contact-form textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:6px;background:white;color:var(--ink);padding:10px 12px;font-size:14px}.contact-form textarea{resize:vertical}.contact-form .privacy-check{flex-direction:row;align-items:flex-start;font-weight:400;gap:9px}.privacy-check input{margin-top:5px}.privacy-check a{text-decoration:underline}.form-status{margin:12px 0 0!important}
+
+/* 9. FLECHAS: sin círculos, cambian de color al pasar el ratón */
+.flecha{position:fixed;top:50%;transform:translateY(-50%);z-index:10;border:0;background:transparent;color:#a38779;font-size:29px;line-height:1;padding:10px;cursor:pointer;transition:color .2s,transform .2s}.flecha:hover{color:var(--ink);transform:translateY(-50%) scale(1.16)}.flecha:disabled{opacity:.22;cursor:default}.flecha:disabled:hover{color:#a38779;transform:translateY(-50%)}.flecha-izq{left:10px}.flecha-der{right:10px}
+
+/* 10. PIE DE PÁGINA */
+.footer{min-height:90px;padding:18px 6% 0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:18px;background:var(--ivory);border-top:1px solid #e6ddd5;color:var(--muted);font-size:10px}.footer-brand img{width:100px;height:45px;object-fit:contain;display:block}.footer-socials{display:flex;align-items:center;gap:22px}.social-link{width:38px;height:38px;display:grid;place-items:center;color:var(--ink);border:1px solid #d9cbc1;border-radius:50%;transition:all .25s ease}.social-link svg{width:18px;height:18px}.social-link:hover{background:var(--ink);color:white;border-color:var(--ink);transform:translateY(-3px)}.footer small{display:block;background:#ede1dc;padding:12px 6%;width:calc(100% + 12vw);margin:0 -6vw;font-size:10px}.footer small a{margin-left:8px}
+
+/* RESPONSIVE: el cambio de paneles sigue teniendo prioridad */
+@media (max-width:800px) {
+  .header {min-height:68px;padding:0 6%}
+  .menu-toggle {display:block}
+  nav {display:none;position:absolute;top:68px;left:0;right:0;padding:14px 7% 20px;background:var(--ivory);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:4px}
+  nav.open {display:flex}
+  nav a {padding:9px 0}
+  .panels>.panel.active {display:flex;flex-direction:column}
+  .panel h1,.panel h2 {font-size:clamp(34px,8vw,48px);line-height:1.18}
+  .hero-copy>p:not(.eyebrow),.split-copy>p:not(.eyebrow),.portfolio-copy>p:not(.eyebrow),.contact-heading>p:not(.eyebrow) {font-size:14px;line-height:1.8}
+  .panels>#inicio.hero.active {display:flex;flex-direction:column;align-items:stretch;gap:10px;padding:35px 8% 0;overflow:hidden}
+  #inicio .hero-copy {max-width:100%;padding:12px 0 0}
+  #inicio h1 {font-size:clamp(34px,8vw,48px);margin-bottom:18px}
+  .panel h1,.panel h2 {font-size:clamp(34px,8vw,48px)}
+  #inicio .hero-art {width:100%;height:clamp(290px,48dvh,490px);margin:0;align-self:center}
+  .split {align-items:stretch;gap:28px;padding:30px 8% 38px}
+  .image-placeholder {height:auto;min-height:280px;max-height:42vh}
+  .split-copy {padding-bottom:8px}
+  .portfolio {padding:35px 7%}
+  .portfolio-grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .panels>.contact.active {display:block}
+  .contact {padding:35px 8%}
+  .contact-layout {grid-template-columns:1fr}
+  .footer {padding:18px 5% 0}
+  .footer small {width:calc(100% + 10vw);margin:0 -5vw}
+}
+@media(max-width:600px) {
+  .footer {justify-content:center;text-align:center;padding-top:22px}
+  .footer-brand,.footer-socials {width:100%;display:flex;justify-content:center}
+  .footer small {text-align:center}
+  .form-row {grid-template-columns:1fr}
+  .flecha-izq {left:1px}.flecha-der {right:1px}.flecha {font-size:24px;padding:8px}
+}
+@media(max-width:500px) {.portfolio-grid {grid-template-columns:1fr}}
+@media(max-width:380px) {.button {width:100%}}
+@media(prefers-reduced-motion:reduce) {*,*::before,*::after {animation:none!important;transition:none!important}}
+
+/* CONTACTO: alineación y campos, sin reglas duplicadas de .form-grid */
+#contacto .contact-layout {align-items:start}
+#contacto .contact-details {padding-top:30px}
+#contacto .contact-details h3,#contacto .contact-form h3 {margin-top:0}
+#contacto .contact-form {margin:0}
+#contacto .contact-form label {display:flex;flex-direction:column;gap:7px;margin-bottom:16px;font-family:var(--sans);font-size:12px;font-weight:500}
+#contacto .contact-form label.privacy-check {flex-direction:row;align-items:flex-start;font-weight:400}
+#contacto .contact-form input:not([type=checkbox]),#contacto .contact-form select,#contacto .contact-form textarea {width:100%;min-width:0;padding:12px 14px;border:1px solid var(--line);border-radius:7px;background:var(--white);color:var(--ink);font-family:var(--sans);font-size:13px}
+#contacto .contact-form textarea {min-height:125px;resize:vertical}
+#contacto .contact-form input:focus,#contacto .contact-form select:focus,#contacto .contact-form textarea:focus {border-color:var(--taupe)}
+
+/* En pantallas de altura reducida, la portada no fuerza un recorte */
+@media (min-width:801px) and (max-height:720px) {#inicio .hero-art{height:min(65dvh,520px)}#inicio h1{font-size:clamp(34px,3.6vw,58px)}}
+
+/* Firma visual: el retrato se integra sin recuadro ni fondo de fotografía */
+#inicio .hero-art {isolation:isolate}
+#inicio .foto-principal {max-width:100%;background:transparent;filter:none}
+#inicio .hero-cta {box-shadow:0 7px 20px rgba(64,53,47,.09)}
+@media (min-width:801px) and (max-width:1100px) {
+  .panels>#inicio.hero.active {grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);padding-inline:5vw}
+  #inicio h1 {font-size:clamp(34px,4vw,54px)}
+}
+
+/* =============================================================
+   PORTADA LUJO EDITORIAL — SOLO INICIO
+   Fotografía original intacta; decoración independiente.
+   No se modifican los estilos de los otros cinco paneles.
+   ============================================================= */
+.panels>#inicio.hero.active {
+  position:relative;
+  isolation:isolate;
+  background:radial-gradient(ellipse at 75% 45%, #f4e4dc 0%, #f9f1eb 42%, #f7f3ef 80%);
+}
+.panels>#inicio.hero.active::before {
+  content:"";position:absolute;inset:0;
+  background:url("img/editorial-velo.svg") center/cover no-repeat;
+  pointer-events:none;z-index:0;opacity:.9;
+}
+#inicio .hero-copy {z-index:2}
+#inicio .hero-art {z-index:1}
+#inicio .hero-art::after {
+  content:"";position:absolute;right:-5%;bottom:0;
+  width:clamp(130px,22vw,320px);height:clamp(100px,25vh,260px);
+  background:url("img/editorial-flores.svg") right bottom/contain no-repeat;
+  pointer-events:none;opacity:.68;z-index:2;
+}
+#inicio .foto-principal {position:relative;z-index:1}
+#inicio .hero-cta {background:#9a7066;color:#fff;border-radius:4px}
+#inicio .hero-cta:hover {background:#6f514a}
+@media (min-width:801px) {
+  .panels>#inicio.hero.active {grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr)}
+  #inicio .hero-art {height:min(79dvh,760px);margin:0 -5vw 0 -6vw}
+  #inicio .foto-principal {object-fit:contain;object-position:center bottom}
+}
+@media (max-width:800px) {
+  .panels>#inicio.hero.active::before {background-size:auto 100%;opacity:.6}
+  #inicio .hero-art::after {width:160px;height:150px;opacity:.5}
+}
+
+/* PORTADA FLORAL DEFINITIVA — recursos superpuestos, no imagen de fondo plana */
+.panels>#inicio.hero.active {
+  position:relative;
+  isolation:isolate;
+  background:radial-gradient(ellipse at 78% 35%,#fff9f6 0%,#f8eee9 46%,#f7f3ef 100%);
+}
+#inicio .hero-copy {z-index:4}
+#inicio .hero-art {z-index:3}
+#inicio .floral {position:absolute;display:block;pointer-events:none;user-select:none;z-index:2;height:auto}
+#inicio .floral-top {width:clamp(180px,27vw,430px);top:-75px;left:-80px;transform:rotate(22deg);opacity:.67}
+#inicio .floral-bottom {width:clamp(180px,25vw,385px);bottom:-110px;right:-70px;transform:rotate(-18deg);opacity:.78;z-index:4}
+#inicio .floral-sprig {width:clamp(140px,18vw,270px);right:3%;bottom:4%;transform:rotate(14deg);opacity:.7;z-index:4}
+#inicio .floral-veil {width:75%;height:100%;left:-5%;top:0;object-fit:cover;opacity:.21;z-index:0}
+/* Misma escala para los títulos de TODOS los paneles, incluida Inicio */
+.panel h1,.panel h2,#inicio h1 {font-size:clamp(36px,4.25vw,72px);line-height:1.12}
+.panel h1 em,.panel h2 em {font-size:1em;font-style:normal;text-transform:uppercase}
+#inicio h1::after,.split-copy h2::after,.portfolio-copy h2::after,.contact-heading h2::after {width:clamp(170px,34vw,380px);height:1px}
+@media (min-width:801px) and (max-height:720px){#inicio h1{font-size:clamp(36px,4.25vw,72px)}}
+@media(max-width:800px){
+ .panel h1,.panel h2,#inicio h1{font-size:clamp(34px,8vw,48px)}
+ #inicio .floral-top{width:170px;top:-65px;left:-65px;opacity:.5}
+ #inicio .floral-bottom{width:200px;bottom:-55px;right:-65px;opacity:.65}
+ #inicio .floral-sprig{width:120px;right:-10px;bottom:3%;opacity:.65}
+ #inicio .floral-veil{width:100%;opacity:.13}
+}
+
+/* PRUEBA FONDO REAL 02 — únicamente portada de Inicio.
+   Fotografía, textos y navegación son elementos independientes. */
+.panels>#inicio.hero.active {
+  background-color:#f7f3ef;
+  background-image:linear-gradient(90deg,rgba(247,243,239,.78) 0%,rgba(247,243,239,.38) 45%,rgba(247,243,239,.05) 78%),url("img/fondo-floral-02.jpg");
+  background-size:cover;
+  background-position:center center;
+}
+.panels>#inicio.hero.active::before {content:none}
+#inicio .hero-art::after {content:none}
+#inicio .hero-copy {z-index:2}
+#inicio .hero-art {z-index:1}
+#inicio .foto-principal {
+  filter:drop-shadow(-4px 5px 10px rgba(77,52,46,.14))
+         drop-shadow(0 10px 25px rgba(77,52,46,.13));
+}
+@media (min-width:801px) {
+  .panels>#inicio.hero.active {grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr)}
+  #inicio h1 {font-size:clamp(38px,4.65vw,78px)}
+  #inicio .hero-copy>p:not(.eyebrow) {max-width:480px;font-size:15px}
+  #inicio .hero-art {height:min(820px, max(66dvh, calc(100dvh - 186px)));margin-left:-8vw}
+}
+@media(max-width:800px){
+  .panels>#inicio.hero.active {
+    background-image:linear-gradient(180deg,rgba(247,243,239,.90) 0%,rgba(247,243,239,.76) 44%,rgba(247,243,239,.25) 100%),url("img/fondo-floral-02.jpg");
+    background-position:center;
+  }
+  #inicio .hero-art {width:calc(100% + 8vw);height:clamp(300px,53dvh,520px)}
+}
+/* Contacto: asteriscos junto al nombre y campos alineados */
+#contacto .contact-form .form-row {
+  align-items: end;
+}
+
+#contacto .contact-form .form-row label {
+  display: block;
+}
+
+#contacto .contact-form .form-row input,
+#contacto .contact-form .form-row select {
+  display: block;
+  margin-top: 7px;
+  height: 48px;
+}

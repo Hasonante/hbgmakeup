@@ -1,0 +1,7 @@
+HBG MAKEUP - Prueba con fondo floral 02
+
+Sustituye index.html, styles.css y script.js en tu web. Copia img/fondo-floral-02.jpg y los recursos nuevos a tu carpeta img SIN BORRAR las fotos originales.
+
+Se ha girado 90 grados la segunda imagen que enviaste. Se ha quitado la decoracion SVG superpuesta solo de Inicio. La foto novia6.png se mantiene intacta.
+
+Para volver a la version anterior, recupera tu copia de seguridad.

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f3ef">
+  <meta name="description" content="HBG Makeup, Herminia Borreguero. Maquillaje profesional para novias, madrinas e invitadas en Sevilla y alrededores.">
+  <title>HBG Makeup | Maquillaje profesional en Sevilla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Tipografías de HBG Makeup -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- CABECERA: logo y menú de navegación -->
+  <header class="header">
+    <a class="brand" href="#inicio" aria-label="HBG Makeup, inicio"><img src="img/hbg-logo.svg" alt="HBG Makeup" class="logo-header"></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="navigation">☰</button>
+    <nav id="navigation" aria-label="Navegación principal">
+      <a href="#inicio" class="active" aria-current="page">Inicio</a>
+      <a href="#novias">Novias</a>
+      <a href="#invitadas">Invitadas</a>
+      <a href="#portfolio">Mi trabajo</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Cada SECTION es una pantalla de la web. Solo se muestra la activa. -->
+  <main class="panels" id="panels">
+    <!-- 1. INICIO -->
+    <section id="inicio" class="panel hero active" aria-hidden="false">
+      <div class="panel-copy hero-copy">
+        <p class="eyebrow">MAQUILLAJE PROFESIONAL · SEVILLA</p>
+        <h1>UNA EXPERIENCIA <em>PENSADA PARA TI</em></h1>
+        <p>Un maquillaje donde la técnica, la atención personalizada y el cuidado de cada detalle se unen para conseguir un resultado que encaje contigo.</p>
+      </div>
+      <div class="hero-art"><img src="img/novia6.png" alt="Novia maquillada por HBG Makeup" class="foto-principal"></div>
+
+
+
+    </section>
+
+    <!-- 2. NOVIAS -->
+    <section id="novias" class="panel split warm" aria-hidden="true" inert>
+      <div class="image-placeholder"><img src="img/novia5.jpg" alt="Maquillaje de novia" class="foto-novia"></div>
+      <div class="panel-copy split-copy">
+        <p class="eyebrow">MAQUILLAJE PARA NOVIAS</p>
+        <h2>Para el día en que <em>TODO IMPORTA</em></h2>
+        <p>El día de tu boda está lleno de emociones y quiero que los preparativos sean una parte bonita de él. Que puedas disfrutar de ese tiempo sabiendo que estás en buenas manos.</p>
+        <p>Cada novia tiene su estilo. Mi trabajo es escucharte y construir juntas un maquillaje que encaje contigo y con tu celebración, cuidando cada detalle desde el primer contacto hasta el gran día.</p>
+        <a class="button whatsapp-button" data-whatsapp="novia" href="#"><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.2-1.7-.9-2-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.6l-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4a11.5 11.5 0 0 0 4.4 3.9c.6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.4s.2-1.3.1-1.4-.2-.2-.5-.4Z"/></svg>Contacta para obtener el dosier</a>
+      </div>
+    </section>
+
+    <!-- 3. INVITADAS -->
+    <section id="invitadas" class="panel split guest-section" aria-hidden="true" inert>
+      <div class="image-placeholder guest-photo"><img src="img/invitada4.png" alt="Maquillaje de invitada HBG Makeup" class="foto-invitada"></div>
+      <div class="panel-copy split-copy">
+        <p class="eyebrow">MAQUILLAJE Y PEINADO PARA EVENTOS</p>
+        <h2>Hay ocasiones que merecen <em>ALGO ESPECIAL</em></h2>
+        <p>Una boda, una celebración o simplemente un día en el que te apetece verte especialmente guapa.</p>
+        <p>Desde un maquillaje natural hasta una propuesta más sofisticada. Me gusta encontrar el equilibrio entre lo que te favorece, tus gustos y el estilo que buscas para el evento.</p>
+        <a class="button whatsapp-button" data-whatsapp="invitada" href="#"><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.2-1.7-.9-2-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.6l-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4a11.5 11.5 0 0 0 4.4 3.9c.6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1.7-.4.7-.4Z"/></svg>Contacta para obtener el dosier</a>
+      </div>
+    </section>
+
+    <!-- 4. MI TRABAJO: añade más fotos copiando uno de los DIV de la galería -->
+    <section id="portfolio" class="panel portfolio" aria-hidden="true" inert>
+      <div class="panel-copy portfolio-copy">
+        <p class="eyebrow">TRABAJOS REALES</p>
+        <h2>Una imagen vale <em>MÁS QUE MIL PALABRAS</em></h2>
+        <p>Detrás de cada maquillaje hay una persona, un estilo y una idea diferente. Aquí puedes descubrir algunos de los resultados de mis trabajos.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div><img src="img/novia3.jpg" alt="Maquillaje de novia"></div>
+        <div><img src="img/invitada3.jpg" alt="Maquillaje de invitada"></div>
+        <div><img src="img/invitada2.jpg" alt="Maquillaje de invitada"></div>
+        <div><img src="img/invitada1.jpg" alt="Maquillaje de invitada"></div>
+        <div><img src="img/invitada6.jpg" alt="Maquillaje de invitada"></div>
+        <div><img src="img/invitada5.jpg" alt="Maquillaje de invitada"></div>
+      </div>
+      <a class="text-link instagram-gallery-link" id="instagram-gallery-link" href="#"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.8" r="1.1" fill="currentColor"/></svg>Ver más en Instagram @hbgmakeup</a>
+    </section>
+
+    <!-- 5. SOBRE MÍ -->
+    <section id="sobre-mi" class="panel split about" aria-hidden="true" inert>
+      <img src="img/yo.jpg" alt="Foto Hermi" class="foto-yo">
+      <div class="panel-copy split-copy">
+        <p class="eyebrow">DETRÁS DE HBG MAKEUP</p>
+        <h2>Hola, soy <em>HERMI</em></h2>
+        <p>Detrás de HBG Makeup estoy yo, Herminia Borreguero. Llevo más de siete años en el mundo del maquillaje y, durante este tiempo, he ido desarrollando mi propia manera de entender esta profesión.</p>
+        <p>Soy exigente con mi trabajo, disfruto aprendiendo y me gusta dedicarle a cada servicio el tiempo que necesita. Para mí, la preparación, la técnica y el resultado tienen la misma importancia. Me gusta implicarme en cada trabajo y saber que, de alguna manera, he formado parte de un día importante para ti.</p>
+        <a class="button whatsapp-button" data-whatsapp="general" href="#"><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.2-1.7-.9-2-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.6l-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4a11.5 11.5 0 0 0 4.4 3.9c.6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.4s.2-1.3.1-1.4-.2-.2-.5-.4Z"/></svg>Hablemos por WhatsApp</a>
+      </div>
+    </section>
+
+    <!-- 6. CONTACTO: el formulario es visual hasta conectar el servidor de correo -->
+    <section id="contacto" class="panel contact" aria-hidden="true" inert>
+      <div class="contact-heading">
+        <p class="eyebrow">ESTARÉ ENCANTADA DE ESCUCHARTE</p>
+        <h2>Hablemos de <em>TU DÍA ESPECIAL.</em></h2>
+        <p>Cuéntame qué tienes en mente y te responderé personalmente lo antes posible.</p>
+      </div>
+      <div class="contact-layout">
+        <div class="contact-details">
+          <h3>¿Dónde encontrarme?</h3>
+          <p><strong>Ubicación</strong><span>Mairena del Alcor, Sevilla</span></p>
+          <p><strong>Teléfono y WhatsApp</strong><a href="tel:+34662966970">662 966 970</a></p>
+          <p><strong>Correo electrónico</strong><a href="mailto:herminiaborgut@gmail.com">herminiaborgut@gmail.com</a></p>
+          <p><strong>Instagram</strong><a href="https://www.instagram.com/hbgmakeup/" target="_blank" rel="noopener noreferrer">@hbgmakeup</a></p>
+          <p><strong>TikTok</strong><a href="https://www.tiktok.com/@hbgmakeup" target="_blank" rel="noopener noreferrer">@hbgmakeup</a></p>
+        </div>
+        <form id="contact-form" class="contact-form">
+          <h3>Solicita información o cita</h3>
+          <p>Rellena tus datos y los detalles de tu evento.</p>
+          <div class="form-row">
+            <label>Nombre y apellidos <span>*</span><input name="nombre" type="text" autocomplete="name" required></label>
+            <label>Correo electrónico <span>*</span><input name="email" type="email" autocomplete="email" required></label>
+          </div>
+          <div class="form-row">
+            <label>Teléfono <span>*</span><input name="telefono" type="tel" autocomplete="tel" required></label>
+            <label>Tipo de servicio <span>*</span><select name="servicio" required><option value="">Selecciona una opción</option><option>Novia</option><option>Invitada</option><option>Madrina</option><option>Otro evento</option></select></label>
+          </div>
+          <div class="form-row">
+            <label>Fecha del evento <span>*</span><input name="fecha" type="date" required></label>
+            <label>Lugar del servicio<input name="lugar" type="text" placeholder="Localidad o dirección aproximada"></label>
+          </div>
+          <label>Cuéntame un poquito más<textarea name="mensaje" rows="4" placeholder="Qué servicio necesitas, horario aproximado, dudas..."></textarea></label>
+          <label class="privacy-check"><input type="checkbox" name="privacidad" required><span>He leído y acepto la <a href="privacidad.html" target="_blank">política de privacidad</a>. *</span></label>
+          <button class="button" type="submit">Enviar solicitud</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLECHAS: pasar de una sección a otra -->
+  <button class="flecha flecha-izq" id="flechaAnterior" type="button" aria-label="Sección anterior">&#10094;</button>
+  <button class="flecha flecha-der" id="flechaSiguiente" type="button" aria-label="Sección siguiente">&#10095;</button>
+
+  <!-- PIE DE PÁGINA: logo, redes y enlaces legales -->
+  <footer class="footer">
+    <div class="footer-brand"><a class="brand" href="#inicio"><img src="img/hbg-logo.svg" alt="HBG Makeup" class="logo"></a></div>
+    <div class="footer-socials">
+      <a class="social-link" data-whatsapp="general" href="#" aria-label="Contactar por WhatsApp" title="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 2 17.7L.5 23.5l6-1.6A11.8 11.8 0 0 0 20.5 3.5ZM12 21a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.5.9.9-3.4-.2-.4A9.8 9.8 0 1 1 12 21Zm5.4-7.3c-.3-.2-1.7-.9-2-.9s-.5-.2-.7.2-.8.9-1 1.1-.4.2-.7.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6s0-.4 0-.6l-.9-2.1c-.2-.5-.5-.4-.7-.4h-.6c-.2 0-.6.1-.9.4s-1.2 1.2-1.2 2.8 1.2 3.2 1.4 3.4a11.5 11.5 0 0 0 4.4 3.9c.6.3 1.1.5 1.5.6.6.2 1.2.2 1.7.1.5-.1 1.7-.7 1.9-1.4s.2-1.3.1-1.4-.2-.2-.5-.4Z"/></svg></a>
+      <a class="social-link" id="instagram-link" href="#" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.8" r="1.1" fill="currentColor"/></svg></a>
+      <a class="social-link" id="tiktok-link" href="#" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.6 3c.3 2.2 1.6 3.6 3.7 3.8v3.2a8.3 8.3 0 0 1-3.7-1.1v6.8a6.1 6.1 0 1 1-6.1-6.1c.4 0 .8 0 1.2.1V13a3 3 0 1 0 1.7 2.7V3h3.2Z" fill="currentColor"/></svg></a>
+    </div>
+    <div class="footer-texto">Maquillaje profesional | Sevilla</div>
+    <small>© <span id="year"></span> HBG Makeup <a href="privacidad.html">Privacidad</a> · <a href="aviso-legal.html">Aviso legal</a></small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
