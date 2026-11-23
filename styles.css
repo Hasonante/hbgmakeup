@@ -338,3 +338,10 @@ nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
     flex-shrink: 0;
   }
 }
+/* Móvil: dejar que el contenido determine la altura */
+@media (max-width: 800px) {
+  .panels,
+  .panels > .panel {
+    min-height: 0;
+  }
+}
