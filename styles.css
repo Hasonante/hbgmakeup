@@ -282,15 +282,15 @@ nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
     object-fit: contain;
   }
 }
-  .split > .split-copy {
-    order: -1;
-  }
-
+ 
 /* Invitadas: mostrar el retrato entero en ordenador */
 @media (min-width: 801px) {
   #invitadas .foto-invitada {
     object-fit: contain;
     object-position: center;
+     .split > .split-copy {
+    order: -1;
+  }
   }
 }
 /* Invitadas: mostrar el retrato entero en ordenador */
