@@ -282,3 +282,6 @@ nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
     object-fit: contain;
   }
 }
+  .split > .split-copy {
+    order: -1;
+  }
