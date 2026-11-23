@@ -285,3 +285,18 @@ nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
   .split > .split-copy {
     order: -1;
   }
+
+/* Invitadas: mostrar el retrato entero en ordenador */
+@media (min-width: 801px) {
+  #invitadas .foto-invitada {
+    object-fit: contain;
+    object-position: center;
+  }
+}
+/* Invitadas: mostrar el retrato entero en ordenador */
+@media (min-width: 801px) {
+  #invitadas .foto-invitada {
+    object-fit: contain;
+    object-position: center;
+  }
+}
