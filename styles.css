@@ -297,3 +297,44 @@ nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
     grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
   }
 }
+
+/* Inicio: composición para móvil */
+@media (max-width: 800px) {
+  .panels > #inicio.hero.active {
+    gap: 20px;
+    padding: 28px 7% 0;
+  }
+
+  #inicio .hero-copy {
+    align-items: center;
+    padding: 0;
+    text-align: center;
+  }
+
+  #inicio .eyebrow {
+    margin-bottom: 14px;
+  }
+
+  #inicio h1 {
+    font-size: clamp(28px, 8vw, 46px);
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  #inicio h1::after {
+    width: 96px;
+    margin: 16px auto 0;
+  }
+
+  #inicio .hero-copy > p:not(.eyebrow) {
+    max-width: 34ch;
+    padding-top: 0;
+    line-height: 1.65;
+  }
+
+  #inicio .hero-art {
+    width: 100%;
+    height: clamp(260px, 43dvh, 430px);
+    flex-shrink: 0;
+  }
+}
