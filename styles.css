@@ -388,3 +388,24 @@ nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
   font-size: 20px;
   margin-top: 30px;
 }
+
+@media (max-width: 800px) {
+  #contacto .contact-form .form-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #contacto .contact-form input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    display: block;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #contacto .contact-form input[type="date"]::-webkit-date-and-time-value {
+    text-align: left;
+    min-height: 1.2em;
+  }
+}
