@@ -96,7 +96,7 @@
       </div>
     </section>
 
-    <!-- 6. CONTACTO: envío mediante FormSubmit -->
+    <!-- 6. CONTACTO: envío mediante Google Apps Script -->
     <section id="contacto" class="panel contact" aria-hidden="true" inert>
       <div class="contact-heading">
         <p class="eyebrow">ESTARÉ ENCANTADA DE ESCUCHARTE</p>
@@ -113,11 +113,8 @@
           <p><strong>TikTok</strong><a href="https://www.tiktok.com/@hbgmakeup" target="_blank" rel="noopener noreferrer">@hbgmakeup</a></p>
         </div>
         <form class="contact-form"
-      action="https://formsubmit.co/herminiaborgut@gmail.com"
+      action="https://script.google.com/macros/s/AKfycbxcKlONTA2O6doV9j5t9GA6sSHwYtwHL7XeJmL1av9yJDG2lv-FFiEb06asYAB8Ta6zOA/exec"
       method="POST">
-          <input type="hidden" name="_subject" value="Nueva consulta desde la web · HBG Makeup">
-          <input type="hidden" name="_next" value="https://hbgmakeup.com/?solicitud=enviada#contacto">
-          <input type="hidden" name="_autoresponse" value="¡Hola! Gracias por escribirme. He recibido tu consulta. En cuanto pueda, revisaré los detalles y te escribiré para contarte si tengo disponibilidad y resolver tus dudas. Un abrazo, Hermi · HBG Makeup.">
           <h3>Solicita información o cita</h3>
           <p>Rellena tus datos y los detalles de tu evento.</p>
           <div class="form-row">
@@ -134,6 +131,7 @@
           </div>
           <label>Cuéntame un poquito más<textarea name="mensaje" rows="4" placeholder="Qué servicio necesitas, horario aproximado, dudas..."></textarea></label>
           <label class="privacy-check"><input type="checkbox" name="privacidad" required><span>He leído y acepto la <a href="privacidad.html" target="_blank">política de privacidad</a>. *</span></label>
+          <div class="g-recaptcha" data-sitekey="6LfQxDEuAAAAAM_fJEiFRXoC5HbDddAdRAl7SDIQ"></div>
           <button class="button" type="submit">Enviar solicitud</button>
         </form>
         <template id="contact-success">
@@ -165,6 +163,7 @@
     <div class="footer-texto">Maquillaje profesional | Sevilla</div>
     <small>© <span id="year"></span> HBG Makeup <a href="privacidad.html">Privacidad</a> · <a href="aviso-legal.html">Aviso legal</a></small>
   </footer>
+  <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
   <script src="script.js?v=2"></script>
 </body>
 </html>
