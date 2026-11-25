@@ -139,9 +139,17 @@ contactForm?.addEventListener('submit', async event => {
     });
 
     if (response.ok) {
-      status.textContent = '¡Gracias por contactar conmigo! He recibido tu solicitud y me pondré en contacto contigo lo antes posible.';
-      status.style.color = '#62745b';
-      contactForm.reset();
+      
+contactForm.innerHTML = `
+  <div class="form-success">
+    <div class="success-icon">&#10003;</div>
+    <h3>¡Gracias por contactar conmigo!</h3>
+    <p>He recibido tu solicitud correctamente.
+    Muy pronto me pondré en contacto contigo
+    para conocer todos los detalles de tu evento.</p>
+    <p class="success-signature">Con cariño, Hermi.</p>
+  </div>
+`;
     } else {
       status.textContent = 'No se ha podido enviar la solicitud. Por favor, inténtalo de nuevo.';
       status.style.color = '#a94442';

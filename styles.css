@@ -345,3 +345,46 @@ nav a:hover,nav a.active {color:var(--taupe);border-color:var(--taupe)}
     min-height: 0;
   }
 }
+
+
+/* Confirmación de envío del formulario */
+
+.form-success {
+  width: 100%;
+  padding: 45px 20px;
+  text-align: center;
+  color: #806b5c;
+  box-sizing: border-box;
+}
+
+.success-icon {
+  width: 65px;
+  height: 65px;
+  border: 1px solid #b69b85;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px;
+  font-size: 30px;
+  color: #a68b75;
+}
+
+.form-success h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.form-success p {
+  line-height: 1.7;
+  max-width: 380px;
+  margin: 0 auto 20px;
+}
+
+.form-success .success-signature {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 20px;
+  margin-top: 30px;
+}
