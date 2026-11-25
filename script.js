@@ -114,52 +114,14 @@ showPanel(location.hash.slice(1) || 'inicio', false);
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
+/* 8. CONFIRMACIÓN AL VOLVER DEL FORMULARIO */
+const returnUrl = new URL(window.location.href);
+if (returnUrl.hash === '#contacto' && returnUrl.searchParams.get('solicitud') === 'enviada') {
+  const confirmation = document.getElementById('contact-success').content.cloneNode(true);
+  const heading = confirmation.querySelector('h3');
+  document.querySelector('.contact-form').replaceWith(confirmation);
+  heading.focus();
 
-/* 8. FORMULARIO DE CONTACTO - FORMSPREE */
-
-const contactForm = document.querySelector('.contact-form');
-
-contactForm?.addEventListener('submit', async event => {
-  event.preventDefault();
-
-  const status = document.getElementById('form-status');
-  const button = contactForm.querySelector('button[type="submit"]');
-
-  button.disabled = true;
-  button.textContent = 'Enviando solicitud...';
-  status.textContent = '';
-
-  try {
-    const response = await fetch(contactForm.action, {
-      method: 'POST',
-      body: new FormData(contactForm),
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-
-    if (response.ok) {
-      
-contactForm.innerHTML = `
-  <div class="form-success">
-    <div class="success-icon">&#10003;</div>
-    <h3>¡Gracias por contactar conmigo!</h3>
-    <p>He recibido tu solicitud correctamente.
-    Muy pronto me pondré en contacto contigo
-    para conocer todos los detalles de tu evento.</p>
-    <p class="success-signature">Con cariño, Hermi.</p>
-  </div>
-`;
-    } else {
-      status.textContent = 'No se ha podido enviar la solicitud. Por favor, inténtalo de nuevo.';
-      status.style.color = '#a94442';
-    }
-  } catch (error) {
-    status.textContent = 'Ha ocurrido un error de conexión. Por favor, inténtalo de nuevo.';
-    status.style.color = '#a94442';
-  } finally {
-    button.disabled = false;
-    button.textContent = 'Enviar solicitud';
-  }
-});
-
+  returnUrl.searchParams.delete('solicitud');
+  history.replaceState(history.state, '', returnUrl);
+}
