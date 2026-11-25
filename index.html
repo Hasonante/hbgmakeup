@@ -133,6 +133,7 @@
           <label class="privacy-check"><input type="checkbox" name="privacidad" required><span>He leído y acepto la <a href="privacidad.html" target="_blank">política de privacidad</a>. *</span></label>
           <div class="g-recaptcha" data-sitekey="6LfQxDEuAAAAAM_fJEiFRXoC5HbDddAdRAl7SDIQ"></div>
           <button class="button" type="submit">Enviar solicitud</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
         </form>
         <template id="contact-success">
           <div class="contact-form">
@@ -165,5 +166,75 @@
   </footer>
   <script src="https://www.google.com/recaptcha/api.js?hl=es" async defer></script>
   <script src="script.js?v=2"></script>
+  <script>
+    (() => {
+      const form = document.querySelector('form.contact-form');
+      const status = form.querySelector('.form-status');
+      const button = form.querySelector('button[type="submit"]');
+      const iframe = document.createElement('iframe');
+      iframe.name = 'hbg-contact-result';
+      iframe.title = 'Resultado del envío';
+      iframe.hidden = true;
+      document.body.append(iframe);
+
+      const request = document.createElement('input');
+      request.type = 'hidden';
+      request.name = 'hbg_request';
+      form.append(request);
+      form.target = iframe.name;
+
+      let pending = '';
+      let timer;
+
+      function finish() {
+        clearTimeout(timer);
+        pending = '';
+        button.disabled = false;
+        button.textContent = 'Enviar solicitud';
+      }
+
+      form.addEventListener('submit', event => {
+        if (pending) {
+          event.preventDefault();
+          return;
+        }
+        const captcha = form.querySelector('[name="g-recaptcha-response"]');
+        if (!captcha?.value) {
+          event.preventDefault();
+          status.textContent = 'Marca la casilla «No soy un robot» antes de enviar.';
+          return;
+        }
+        pending = crypto.randomUUID();
+        request.value = pending;
+        button.disabled = true;
+        button.textContent = 'Enviando…';
+        status.textContent = '';
+        timer = setTimeout(() => {
+          finish();
+          window.grecaptcha?.reset();
+          status.textContent = 'No se pudo comprobar el resultado. Si tienes dudas, escríbeme por WhatsApp antes de volver a enviar.';
+        }, 45000);
+      });
+
+      window.addEventListener('message', event => {
+        if (!pending || !/^https:\/\/(?:[a-z0-9-]+[.-])?script\.googleusercontent\.com$|^https:\/\/script\.google\.com$/.test(event.origin)) return;
+        const result = event.data;
+        if (result?.type !== 'hbg-contact-result' || result.request !== pending) return;
+
+        finish();
+        if (!result.received) {
+          window.grecaptcha?.reset();
+          status.textContent = result.message;
+          return;
+        }
+
+        const confirmation = document.getElementById('contact-success').content.cloneNode(true);
+        const heading = confirmation.querySelector('h3');
+        if (!result.confirmed) confirmation.querySelector('.form-success p').textContent = result.message;
+        form.replaceWith(confirmation);
+        heading.focus();
+      });
+    })();
+  </script>
 </body>
 </html>
