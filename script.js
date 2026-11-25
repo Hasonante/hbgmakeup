@@ -114,11 +114,44 @@ showPanel(location.hash.slice(1) || 'inicio', false);
 const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
-/* 8. FORMULARIO: pendiente de conectar con un servicio de envío de correo.
-   IMPORTANTE: no mostrar un mensaje de éxito hasta que el servidor confirme el envío. */
-const contactForm = document.getElementById('contact-form');
-contactForm?.addEventListener('submit', event => {
+
+/* 8. FORMULARIO DE CONTACTO - FORMSPREE */
+
+const contactForm = document.querySelector('.contact-form');
+
+contactForm?.addEventListener('submit', async event => {
   event.preventDefault();
+
   const status = document.getElementById('form-status');
-  if (status) status.textContent = 'El formulario todavía no envía solicitudes. Estamos preparando su conexión con el correo. Mientras tanto, puedes contactar por teléfono, WhatsApp o email.';
+  const button = contactForm.querySelector('button[type="submit"]');
+
+  button.disabled = true;
+  button.textContent = 'Enviando solicitud...';
+  status.textContent = '';
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      status.textContent = '¡Gracias por contactar conmigo! He recibido tu solicitud y me pondré en contacto contigo lo antes posible.';
+      status.style.color = '#62745b';
+      contactForm.reset();
+    } else {
+      status.textContent = 'No se ha podido enviar la solicitud. Por favor, inténtalo de nuevo.';
+      status.style.color = '#a94442';
+    }
+  } catch (error) {
+    status.textContent = 'Ha ocurrido un error de conexión. Por favor, inténtalo de nuevo.';
+    status.style.color = '#a94442';
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Enviar solicitud';
+  }
 });
+
